@@ -1,0 +1,12 @@
+:root {
+  --bg-primary: #0F0F14;
+  --bg-secondary: #15151E;
+  --text-primary: #EDEDED;
+  --text-secondary: #B3B3C6;
+
+  --purple-primary: #7C5CFF;
+  --purple-secondary: #A78BFA;
+
+  --radius: 12px;
+  --transition: 0.3s ease;
+}

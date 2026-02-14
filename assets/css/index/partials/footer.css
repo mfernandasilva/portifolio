@@ -1,0 +1,175 @@
+/* ==============================
+   FOOTER
+================================ */
+
+.footer {
+  position: relative;
+  margin-top: 64px;
+  padding: 100px 8% 40px;
+
+  background: linear-gradient(
+    to top,
+    rgba(128, 90, 213, 0.05),
+    rgba(15,15,20,0.95)
+  );
+}
+
+/* Linha superior do footer */
+.footer::before {
+  content: "";
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 85%;
+  height: 1px;
+
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(128, 90, 213, 0.5),
+    transparent
+  );
+
+  z-index: 10;
+}
+
+/* ==============================
+   GRID PRINCIPAL
+================================ */
+
+.footer-container {
+  max-width: 1300px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1.2fr;
+  gap: 80px;
+}
+
+/* ==============================
+   COLUNA ESQUERDA
+================================ */
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-logo {
+  height: 52px;
+  margin-bottom: 24px;
+}
+
+.footer-location {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.6);
+}
+
+.footer-divider {
+  width: 50%;
+  height: 1px;
+  margin: 16px 0;
+  background: rgba(255,255,255,0.12);
+}
+
+.footer-email {
+  font-weight: 500;
+  color: var(--purple-primary);
+  text-decoration: none;
+}
+
+/* ==============================
+   COLUNA CENTRAL
+================================ */
+
+.footer-center h4{
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.footer-right h4 {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.footer-center ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-center li {
+  margin-bottom: 12px;
+}
+
+.footer-center a {
+  text-decoration: none;
+  color: rgba(255,255,255,0.7);
+  transition: color 0.25s ease;
+}
+
+.footer-center a:hover {
+  color: #fff;
+}
+
+/* ==============================
+   COLUNA DIREITA — REDES
+================================ */
+
+.footer-right {
+  text-align: left;
+}
+
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.social-btn {
+  height: 52px;
+  border-radius: 14px;
+
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border 0.25s ease;
+}
+
+.social-btn img {
+  width: 22px;
+  opacity: 0.85;
+  filter: brightness(0) invert(1);
+}
+
+.social-btn:hover {
+  transform: translateY(-4px);
+  background: rgba(128, 90, 213, 0.15);
+  border-color: rgba(128, 90, 213, 0.5);
+}
+
+/* ==============================
+   FOOTER BOTTOM
+================================ */
+
+.footer-bottom {
+  margin-top: 80px;
+  padding-top: 24px;
+
+  border-top: 1px solid rgba(255,255,255,0.08);
+
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.45);
+}

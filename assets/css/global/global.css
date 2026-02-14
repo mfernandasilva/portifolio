@@ -1,0 +1,8 @@
+@import './fontes.css';
+@import './normalize.css';
+@import './scrollbar.css';
+@import './variables.css';
+
+html {
+  scroll-behavior: smooth;
+}

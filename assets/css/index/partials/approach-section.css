@@ -1,0 +1,111 @@
+.thinking-orbit {
+  position: relative;
+  min-height: 100vh;
+  padding: 180px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thinking-core {
+  max-width: 520px;
+  text-align: center;
+  z-index: 3;
+}
+
+.thinking-core h2 {
+  font-size: clamp(3rem, 5vw, 3.6rem);
+  margin-bottom: 28px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ffffff, var(--purple-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.thinking-core p {
+  font-size: 1.2rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.thinking-card {
+  width: 230px;
+  padding: 22px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid #A78BFA;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  animation: breathe 6.5s ease-in-out infinite;
+}
+
+.thinking-card .icon {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.thinking-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+}
+
+.thinking-card p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.orbit { 
+  position: absolute; 
+}
+
+.orbit-1 { 
+  top: 6%; 
+  left: 35%; 
+}
+
+.orbit-2 { 
+  top: 6%; 
+  right: 35%; 
+}
+
+.orbit-3 { 
+  top: 28%; 
+  right: 12%; 
+}
+
+.orbit-4 { 
+  bottom: 28%; 
+  right: 12%; 
+}
+
+/* base */
+.orbit-5 { 
+  bottom: 6%; 
+  right: 35%; 
+}
+
+.orbit-6 { 
+  bottom: 6%; 
+  left: 35%; 
+}
+
+/* esquerda */
+.orbit-7 { 
+  bottom: 28%; 
+  left: 12%; 
+}
+
+.orbit-8 { 
+  top: 28%; 
+  left: 12%; 
+}
+
+@keyframes breathe {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.04);
+  }
+}
