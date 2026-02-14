@@ -1,47 +1,52 @@
 header.navbar {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   z-index: 1000;
-  border-bottom: 0.5px solid rgba(255, 255, 255, 0.12);
-  transition:
-    background 0.3s ease,
-    backdrop-filter 0.3s ease,
-    padding 0.3s ease;
+  padding: 20px 0;
+  background: transparent;
+  border: none;
+  transition: padding 0.3s ease;
+  box-sizing: border-box;
 }
 
 header.navbar .navbar-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  padding: 20px 10%;
-  transition: padding 0.3s ease;
+  width: 95%; 
+  max-width: 1900px; 
+  margin: 0 auto; 
+  padding: 12px 45px;
+  background: rgba(15, 15, 20, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(128, 90, 213, 0.3);
+  border-radius: 22px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 header.navbar .navbar-logo {
+  flex: 1;
   display: flex;
   align-items: center;
 }
 
 header.navbar .navbar-logo img {
-  height: 48px;
-  object-fit: contain;
-  filter: brightness(0) invert(1) contrast(0.9);
-  opacity: 0.9;
+  height: 44px;
   transition: height 0.3s ease;
-}
-
-header.navbar .navbar-actions {
-  display: flex;
-  align-items: center;
-  gap: 36px;
+  filter: brightness(0) invert(1);
 }
 
 header.navbar .nav-links {
   display: flex;
   align-items: center;
-  gap: 32px;
+  justify-content: center;
+  flex: 2;
+  gap: 45px;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -49,15 +54,15 @@ header.navbar .nav-links {
 
 header.navbar .nav-links a {
   position: relative;
-  padding: 10px 4px;
   color: #ffffff;
-  font-weight: 400;
   font-size: 1rem;
   text-decoration: none;
   transition: color 0.3s ease;
+  white-space: nowrap;
 }
 
-header.navbar .nav-links a:hover {
+header.navbar .nav-links a:hover,
+header.navbar .nav-links a.active {
   color: var(--purple-primary);
 }
 
@@ -72,85 +77,74 @@ header.navbar .nav-links a::after {
   transition: width 0.3s ease;
 }
 
-header.navbar .nav-links a:hover::after {
-  width: 100%;
-}
-
-header.navbar .nav-links a.active {
-  color: var(--purple-primary);
-}
-
+header.navbar .nav-links a:hover::after,
 header.navbar .nav-links a.active::after {
   width: 100%;
 }
 
-header.navbar .navbar-actions .btn-whatsapp {
-  height: 46px;
-  padding: 0 22px;
+header.navbar .navbar-actions {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
 
+header.navbar .navbar-actions .btn-whatsapp {
+  height: 48px;
+  padding: 0 26px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--purple-primary) 0%, var(--purple-secondary) 100%);
+  color: #ffffff !important;
+  font-weight: 600;
+  font-size: 0.95rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-
-  border-radius: 14px;
-
-  background: linear-gradient(
-    135deg,
-    var(--purple-primary),
-    var(--purple-secondary)
-  );
-
-  color: #ffffff;
-  font-weight: 500;
-  font-size: 0.95rem;
-  letter-spacing: 0.2px;
+  gap: 10px;
   text-decoration: none;
-
-  box-shadow:
-    0 8px 22px rgba(128, 90, 213, 0.35),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
-
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    background 0.25s ease;
+  box-shadow: 0 8px 20px rgba(128, 90, 213, 0.3), 
+              inset 0 1px 1px rgba(255, 255, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-header.navbar .navbar-actions .btn-whatsapp img {
-  width: 17px;
-  height: 17px;
-  filter: brightness(0) invert(1);
+header.navbar .navbar-actions .btn-whatsapp::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: all 0.6s;
 }
 
 header.navbar .navbar-actions .btn-whatsapp:hover {
   transform: translateY(-2px);
-  box-shadow:
-    0 12px 30px rgba(128, 90, 213, 0.45),
-    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  box-shadow: 0 12px 25px rgba(128, 90, 213, 0.5);
 }
 
-header.navbar .navbar-actions .btn-whatsapp:active {
-  transform: translateY(0);
-  box-shadow:
-    0 6px 16px rgba(128, 90, 213, 0.35);
+header.navbar .navbar-actions .btn-whatsapp:hover::before {
+  left: 100%;
+}
+
+header.navbar .navbar-actions .btn-whatsapp img {
+  width: 18px;
+  height: 18px;
+  filter: brightness(0) invert(1);
 }
 
 header.navbar.scrolled {
-  background: rgba(15, 15, 20, 0.85);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  padding: 12px 0;
 }
 
 header.navbar.scrolled .navbar-container {
-  padding: 14px 10%;
+  background: rgba(15, 15, 20, 0.92);
+  border-color: rgba(128, 90, 213, 0.5);
 }
 
-header.navbar.scrolled .navbar-logo img {
-  height: 42px;
-}
-
-/* Estilo do botão Hamburguer (Desktop oculto) */
+/* --- RESPONSIVO --- */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -159,62 +153,51 @@ header.navbar.scrolled .navbar-logo img {
   border: none;
   cursor: pointer;
 }
-
 .menu-toggle span {
   display: block;
   height: 2px;
   background: white;
+  width: 26px;
   border-radius: 2px;
 }
-
-.menu-toggle span:first-child { width: 26px; }
-.menu-toggle span:last-child { width: 16px; }
-
-/* RESPONSIVO */
 @media screen and (max-width: 1000px) {
+  header.navbar {
+    padding: 10px 0;
+  }
   header.navbar .navbar-container {
-    height: 70px;
-    padding: 0 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    width: 90%;
+    padding: 10px 20px;
+    z-index: 1001;
   }
-
-  /* 1. ESCONDE O WHATSAPP NO MOBILE */
-  header.navbar .btn-whatsapp {
-    display: none !important;
-  }
-
-  /* 2. MOSTRA O BOTÃO MENU */
-  .menu-toggle {
-    display: flex;
-  }
-
-  /* 3. CONFIGURA O MENU VERTICAL */
   header.navbar .nav-links {
-    display: none; /* Escondido por padrão */
+    display: none; 
     position: fixed;
-    top: 70px;
-    left: 0;
-    width: 100%;
+    top: 80px; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
     background: #0f0f14;
+    border-radius: 20px;
+    border: 1px solid rgba(128, 90, 213, 0.4);
     flex-direction: column;
-    padding: 40px 0;
-    gap: 25px;
-    z-index: 1000;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding: 20px 0;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.9);
+    z-index: 9999 !important; 
   }
-
-  /* 4. CLASSE ATIVADA PELO JS */
   header.navbar .nav-links.active {
     display: flex !important;
   }
-  
   header.navbar .nav-links li a {
-    font-size: 1.2rem;
-    color: #fff;
-    text-decoration: none;
     display: block;
+    width: 100%;
+    padding: 18px 0; 
     text-align: center;
+  }
+  header.navbar .btn-whatsapp {
+    display: none !important;
+  }
+  .menu-toggle {
+    display: flex;
+    z-index: 10002; 
   }
 }

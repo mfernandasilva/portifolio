@@ -4,32 +4,39 @@
   box-sizing: border-box;
 }
 
+html, body {
+  width: 100%;
+  max-width: 100vw; 
+  overflow-x: hidden;
+  position: relative;
+}
+
 body {
   font-family: 'Inter', sans-serif;
   background: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.6;
-  overflow: hidden;
+}
+
+body:not(.loaded) {
+  overflow: hidden; 
 }
 
 body.loaded {
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden; 
 }
 
 section {
   padding: 80px 10%;
+  width: 100%; 
+  max-width: 100%; 
+  box-sizing: border-box;
+  display: block;
 }
 
-h1, h2, h3, h4 {
-  font-weight: 600;
-}
-
-h3 {
-  margin-bottom: 32px;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-  transition: var(--transition);
+@media screen and (max-width: 1000px) {
+  section {
+    padding: 60px 20px; 
+  }
 }

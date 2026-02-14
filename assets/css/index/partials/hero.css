@@ -1,18 +1,12 @@
-/* ========================= */
-/* HERO SECTION - COMPLETA */
-/* ========================= */
-
 .hero-centered {
-  /* Garante que a hero ocupe a tela toda, descontando a margem das ondas */
   min-height: 100vh; 
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   position: relative;
-  padding: 100px 8% 160px; /* Padding superior para não bater na Nav fixa */
+  padding: 100px 8% 160px; 
   overflow: hidden;
-
   background: radial-gradient(
     ellipse at top,
     rgba(128, 90, 213, 0.15),
@@ -23,7 +17,7 @@
 .hero-centered-container {
   max-width: 920px;
   position: relative;
-  z-index: 10; /* Acima do fade e das waves de fundo */
+  z-index: 10; 
 }
 
 .hero-centered .hero-eyebrow {
@@ -37,7 +31,6 @@
 }
 
 .hero-centered h1 {
-  /* Tamanho fluido: 2.5rem no mobile até 6.2rem no desktop */
   font-size: clamp(2.8rem, 8vw, 6.2rem);
   font-weight: 700;
   line-height: 1.05;
@@ -51,14 +44,12 @@
     var(--purple-primary),
     var(--purple-secondary)
   );
-  /* Correção do erro de compatibilidade do VS Code */
   -webkit-background-clip: text;
   background-clip: text; 
   -webkit-text-fill-color: transparent;
 }
 
 .hero-centered p {
-  /* Fonte ajustável para leitura no mobile */
   font-size: clamp(1.1rem, 4vw, 1.5rem);
   line-height: 1.75;
   max-width: 700px;
@@ -66,7 +57,6 @@
   color: rgba(255,255,255,0.78);
 }
 
-/* CONTAINER DE BOTÕES (CTA) */
 .hero-cta {
   margin-top: 56px;
   display: flex;
@@ -74,13 +64,12 @@
   gap: 24px;
 }
 
-/* ESTILO DOS BOTÕES */
 .btn-primary,
 .btn-secondary {
   padding: 14px 28px;
   font-size: 1rem;
   border-radius: 14px;
-  text-decoration: none; /* Garante que não tenha sublinhado */
+  text-decoration: none; 
   display: inline-block;
   transition: 
     transform 0.25s ease,
@@ -115,7 +104,6 @@
   transform: translateY(-3px);
 }
 
-/* ELEMENTOS VISUAIS DE FUNDO */
 .wave-container {
   position: absolute;
   bottom: -1px; 
@@ -154,30 +142,23 @@
   z-index: 2;
 }
 
-/* ========================= */
-/* RESPONSIVIDADE (MOBILE) */
-/* ========================= */
-
 @media screen and (max-width: 1000px) {
   .hero-centered {
-    padding-top: 120px; /* Mais espaço para a Nav Mobile */
+    padding-top: 120px; 
     padding-bottom: 100px;
   }
-
   .hero-cta {
-    flex-direction: column; /* Botões empilhados no mobile */
+    flex-direction: column; 
     align-items: center;
     gap: 16px;
     margin-top: 40px;
   }
-
   .btn-primary, .btn-secondary {
     width: 100%;
-    max-width: 210px; /* Evita que o botão fique gigante em tablets */
+    max-width: 210px; 
     text-align: center;
   }
-
   .wave-container {
-    height: 140px; /* Reduz a altura das ondas no celular */
+    height: 140px; 
   }
 }
