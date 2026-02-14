@@ -1,29 +1,49 @@
 .tech-section {
   padding: 120px 0 140px;
   overflow: hidden;
+  background-color: var(--bg-primary); 
 }
 
 .tech-intro {
   max-width: 760px;
   margin: 0 auto 88px;
   text-align: center;
+  padding: 0 20px;
 }
 
 .tech-intro h2 {
-  font-size: clamp(2.8rem, 5vw, 3.6rem);
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
   margin-bottom: 16px;
+  background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.5) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .tech-intro p {
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 2vw, 1.25rem);
   line-height: 1.7;
-  color: rgba(255,255,255,0.8);
+  color: rgba(255,255,255,0.7);
 }
 
 .tech-carousel {
   width: 100%;
   overflow: hidden;
   position: relative;
+  padding: 20px 0;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 15%,
+    black 85%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 15%,
+    black 85%,
+    transparent
+  );
 }
 
 .tech-track {
@@ -31,53 +51,98 @@
   gap: 72px;
   width: max-content;
   animation: tech-scroll 40s linear infinite;
+  will-change: transform;
 }
 
-.tech-carousel:hover .tech-track {
+.tech-carousel:hover .tech-track,
+.tech-carousel:active .tech-track {
   animation-play-state: paused;
 }
 
-/* Item */
 .tech-item {
   width: 140px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 16px;
-
-  opacity: 0.85;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  padding: 20px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .tech-item img {
   width: 64px;
   height: 64px;
-  filter: grayscale(100%) brightness(1.2);
-  transition: filter 0.3s ease, transform 0.3s ease;
+  object-fit: contain;
+  filter: grayscale(100%) opacity(0.6);
+  transition: all 0.4s ease;
 }
 
 .tech-item span {
   font-size: 0.95rem;
-  letter-spacing: 0.4px;
-  color: rgba(255,255,255,0.85);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: rgba(255,255,255,0.5);
+  transition: all 0.4s ease;
 }
 
-/* Hover */
 .tech-item:hover {
-  opacity: 1;
-  transform: translateY(-4px);
+  background: rgba(167, 139, 250, 0.08);
+  border-color: rgba(167, 139, 250, 0.3);
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .tech-item:hover img {
-  filter: grayscale(0%) brightness(1);
+  filter: grayscale(0%) opacity(1) drop-shadow(0 0 10px rgba(167, 139, 250, 0.5));
 }
 
-/* Animation */
+.tech-item:hover span {
+  color: #fff;
+}
+
 @keyframes tech-scroll {
-  from {
-    transform: translateX(0);
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media screen and (max-width: 950px) {
+  .tech-section {
+    padding: 80px 0;
   }
-  to {
-    transform: translateX(-50%);
+
+  .tech-intro {
+    margin-bottom: 50px;
+  }
+
+  .tech-track {
+    gap: 30px; 
+    animation-duration: 25s; 
+  }
+
+  .tech-item {
+    width: 110px;
+    padding: 15px 10px;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .tech-item img {
+    width: 45px;
+    height: 45px;
+    filter: grayscale(0%) opacity(0.8); 
+  }
+
+  .tech-item span {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .tech-item:active {
+    transform: scale(0.95);
+    background: rgba(167, 139, 250, 0.2);
   }
 }

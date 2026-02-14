@@ -1,56 +1,29 @@
-/* ==============================
-   FOOTER
-================================ */
-
 .footer {
   position: relative;
   margin-top: 64px;
   padding: 100px 8% 40px;
-
-  background: linear-gradient(
-    to top,
-    rgba(128, 90, 213, 0.05),
-    rgba(15,15,20,0.95)
-  );
+  background: linear-gradient(to top, rgba(128, 90, 213, 0.05), rgba(15,15,20,0.95));
 }
 
-/* Linha superior do footer */
 .footer::before {
   content: "";
   position: absolute;
   top: -24px;
   left: 50%;
   transform: translateX(-50%);
-
   width: 85%;
   height: 1px;
-
-  background: linear-gradient(
-    to right,
-    transparent,
-    rgba(128, 90, 213, 0.5),
-    transparent
-  );
-
+  background: linear-gradient(to right, transparent, rgba(128, 90, 213, 0.5), transparent);
   z-index: 10;
 }
-
-/* ==============================
-   GRID PRINCIPAL
-================================ */
 
 .footer-container {
   max-width: 1300px;
   margin: 0 auto;
-
   display: grid;
-  grid-template-columns: 1.3fr 1fr 1.2fr;
-  gap: 80px;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 60px;
 }
-
-/* ==============================
-   COLUNA ESQUERDA
-================================ */
 
 .footer-left {
   display: flex;
@@ -60,40 +33,33 @@
 
 .footer-logo {
   height: 52px;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
-.footer-location {
+.footer-about {
   font-size: 0.95rem;
-  color: rgba(255,255,255,0.6);
-}
-
-.footer-divider {
-  width: 50%;
-  height: 1px;
-  margin: 16px 0;
-  background: rgba(255,255,255,0.12);
+  line-height: 1.6;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 20px;
+  max-width: 400px;
 }
 
 .footer-email {
   font-weight: 500;
   color: var(--purple-primary);
   text-decoration: none;
+  font-size: 1rem;
+  transition: opacity 0.3s;
 }
 
-/* ==============================
-   COLUNA CENTRAL
-================================ */
-
-.footer-center h4{
-  font-size: 1.1rem;
-  margin-bottom: 20px;
+.footer-email:hover {
+  opacity: 0.8;
 }
 
-.footer-right h4 {
-  text-align: center;
+.footer-center h4, .footer-right h4 {
   font-size: 1.1rem;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
+  color: #fff;
 }
 
 .footer-center ul {
@@ -108,68 +74,81 @@
 
 .footer-center a {
   text-decoration: none;
-  color: rgba(255,255,255,0.7);
+  color: rgba(255,255,255,0.6);
   transition: color 0.25s ease;
 }
 
 .footer-center a:hover {
-  color: #fff;
-}
-
-/* ==============================
-   COLUNA DIREITA — REDES
-================================ */
-
-.footer-right {
-  text-align: left;
+  color: var(--purple-primary);
 }
 
 .social-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+  gap: 12px;
+  max-width: 200px;
 }
 
 .social-btn {
-  height: 52px;
-  border-radius: 14px;
-
-  background: rgba(255,255,255,0.06);
+  height: 50px;
+  width: 50px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.1);
-
   display: flex;
   align-items: center;
   justify-content: center;
-
-  transition:
-    transform 0.25s ease,
-    background 0.25s ease,
-    border 0.25s ease;
+  transition: all 0.3s ease;
 }
 
 .social-btn img {
-  width: 22px;
-  opacity: 0.85;
+  width: 20px;
   filter: brightness(0) invert(1);
 }
 
 .social-btn:hover {
   transform: translateY(-4px);
-  background: rgba(128, 90, 213, 0.15);
+  background: rgba(128, 90, 213, 0.2);
   border-color: rgba(128, 90, 213, 0.5);
 }
-
-/* ==============================
-   FOOTER BOTTOM
-================================ */
 
 .footer-bottom {
   margin-top: 80px;
   padding-top: 24px;
-
   border-top: 1px solid rgba(255,255,255,0.08);
-
   text-align: center;
   font-size: 0.85rem;
   color: rgba(255,255,255,0.45);
+}
+
+@media (max-width: 950px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 60px 5% 30px;
+  }
+  
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 50px;
+  }
+
+  .footer-left, .footer-center, .footer-right {
+    align-items: center;
+  }
+
+  .footer-about {
+    text-align: center;
+  }
+
+  .social-grid {
+    justify-content: center;
+    max-width: 100%;
+  }
 }

@@ -1,111 +1,183 @@
-.thinking-orbit {
+.thinking-container-mobile {
+  display: none;
+}
+
+.thinking-section {
   position: relative;
   min-height: 100vh;
-  padding: 180px 0;
+  padding: 100px 5%;
+  background: var(--bg-primary);
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .thinking-core {
-  max-width: 520px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 350px;
   text-align: center;
-  z-index: 3;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.thinking-core .badge {
+  display: inline-block;
+  padding: 6px 14px;
+  background: rgba(167, 139, 250, 0.1);
+  border: 1px solid rgba(167, 139, 250, 0.3);
+  border-radius: 99px;
+  color: #A78BFA;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 15px;
 }
 
 .thinking-core h2 {
-  font-size: clamp(3rem, 5vw, 3.6rem);
-  margin-bottom: 28px;
-  font-weight: 700;
+  font-size: 2.2rem;
   background: linear-gradient(135deg, #ffffff, var(--purple-secondary));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
 }
 
-.thinking-core p {
-  font-size: 1.2rem;
-  line-height: 1.75;
-  color: rgba(255, 255, 255, 0.85);
+.orbit-lines {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.orbit-lines .line {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px dashed rgba(167, 139, 250, 0.15);
+  border-radius: 50%;
+  animation: orbit-rotate linear infinite;
+}
+.orbit-lines .line:nth-child(1) { width: 450px; height: 450px; animation-duration: 40s; }
+.orbit-lines .line:nth-child(2) { width: 700px; height: 700px; animation-duration: 60s; animation-direction: reverse; }
+
+@keyframes orbit-rotate {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.thinking-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: 850px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
 }
 
 .thinking-card {
+  position: absolute;
   width: 230px;
-  padding: 22px;
+  padding: 2px;
   border-radius: 22px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid #A78BFA;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  animation: breathe 6.5s ease-in-out infinite;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
 }
 
-.thinking-card .icon {
-  font-size: 1.6rem;
-  margin-bottom: 12px;
-  display: block;
+.thinking-card::before {
+  content: "";
+  position: absolute;
+  width: 150%; height: 150%;
+  background: conic-gradient(transparent, var(--purple-primary), var(--purple-secondary), transparent 30%);
+  animation: rotate-fire 4s linear infinite;
 }
 
-.thinking-card h3 {
-  font-size: 1.05rem;
-  margin-bottom: 6px;
+@keyframes rotate-fire { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+.card-inner {
+  background: #0b0b10;
+  padding: 22px;
+  border-radius: 20px;
+  width: 100%; height: 100%;
+  z-index: 2;
+  position: relative;
 }
 
-.thinking-card p {
-  font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.75);
-}
+.item-1 { transform: rotate(0deg) translate(380px) rotate(0deg); }
+.item-2 { transform: rotate(45deg) translate(380px) rotate(-45deg); }
+.item-3 { transform: rotate(90deg) translate(380px) rotate(-90deg); }
+.item-4 { transform: rotate(135deg) translate(380px) rotate(-135deg); }
+.item-5 { transform: rotate(180deg) translate(380px) rotate(-180deg); }
+.item-6 { transform: rotate(225deg) translate(380px) rotate(-225deg); }
+.item-7 { transform: rotate(270deg) translate(380px) rotate(-270deg); }
+.item-8 { transform: rotate(315deg) translate(380px) rotate(-315deg); }
 
-.orbit { 
-  position: absolute; 
-}
 
-.orbit-1 { 
-  top: 6%; 
-  left: 35%; 
-}
-
-.orbit-2 { 
-  top: 6%; 
-  right: 35%; 
-}
-
-.orbit-3 { 
-  top: 28%; 
-  right: 12%; 
-}
-
-.orbit-4 { 
-  bottom: 28%; 
-  right: 12%; 
-}
-
-/* base */
-.orbit-5 { 
-  bottom: 6%; 
-  right: 35%; 
-}
-
-.orbit-6 { 
-  bottom: 6%; 
-  left: 35%; 
-}
-
-/* esquerda */
-.orbit-7 { 
-  bottom: 28%; 
-  left: 12%; 
-}
-
-.orbit-8 { 
-  top: 28%; 
-  left: 12%; 
-}
-
-@keyframes breathe {
-  0%, 100% {
-    transform: translateY(0) scale(1);
+@media screen and (max-width: 950px) {
+  .thinking-section { padding: 80px 5%; height: auto; display: block; }
+  .orbit-lines, .thinking-container { 
+    display: none; 
   }
-  50% {
-    transform: translateY(-8px) scale(1.04);
+  .thinking-container-mobile { 
+    display: flex; 
+    flex-direction: column;
+    gap: 30px;
+    position: relative;
+    padding-left: 20px;
   }
+  .thinking-core {
+    position: relative;
+    top: auto; left: auto;
+    transform: none;
+    max-width: 100%;
+    margin-bottom: 60px;
+    text-align: left;
+  }
+  .thinking-container-mobile::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 0;
+    width: 2px; height: 100%;
+    background: rgba(167, 139, 250, 0.1);
+  }
+  .thinking-container-mobile::after {
+    content: "";
+    position: absolute;
+    left: 0; top: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--purple-primary), transparent);
+    transform-origin: top;
+    scale: 1 0;
+    animation: grow-line linear;
+    animation-timeline: scroll(); 
+  }
+  @keyframes grow-line {
+    to { scale: 1 1; }
+  }
+  .mobile-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(167, 139, 250, 0.2);
+    border-radius: 16px;
+    padding: 20px;
+    margin-left: 20px;
+  }
+  .mobile-card::before {
+    content: "";
+    position: absolute;
+    left: -26px; top: 25px;
+    width: 10px; height: 10px;
+    background: var(--purple-primary);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--purple-primary);
+  }
+  .mobile-card h3 { font-size: 1.1rem; color: #fff; display: flex; align-items: center; gap: 10px; }
+  .mobile-card p { font-size: 0.9rem; color: rgba(255,255,255,0.6); margin-top: 8px; }
 }
