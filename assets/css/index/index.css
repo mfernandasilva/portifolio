@@ -7,3 +7,10 @@
 @import './partials/tech-section.css';
 @import './partials/cts-section.css';
 @import './partials/footer.css';
+
+
+@import './partials/projects/project-details.css';
+@import './partials/projects/hero.css';
+@import './partials/projects/info.css';
+@import './partials/projects/showcase.css';
+@import './partials/projects/animations.css';

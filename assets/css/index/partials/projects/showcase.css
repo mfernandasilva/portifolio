@@ -1,0 +1,76 @@
+.project-showcase {
+    max-width: 1500px;
+    margin: 120px auto;
+    padding: 80px 40px;
+    text-align: center;
+    background: radial-gradient(circle at top, #111117, #0c0c11);
+    border-radius: 28px;
+}
+
+.showcase-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.showcase-title span {
+    color: #7c5cff;
+}
+
+.control-btns {
+    display: inline-flex;
+    background: rgba(255,255,255,.05);
+    padding: 6px;
+    border-radius: 14px;
+    gap: 6px;
+    border: 1px solid rgba(255,255,255,.08);
+}
+
+.view-btn {
+    border: none;
+    background: transparent;
+    color: #888;
+    padding: 10px 24px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.view-btn.active {
+    background: #7c5cff;
+    color: #fff;
+}
+
+.showcase-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 120px;
+    min-height: 950px;
+}
+
+.desktop-case {
+    max-width: 1250px;
+    width: 100%;
+    transition: .5s ease;
+}
+
+.mobile-case {
+    width: 470px;
+    height: 920px;
+    transition: .5s ease;
+}
+
+.state-desktop .mobile-case,
+.state-mobile .desktop-case {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(.8);
+    position: absolute;
+}
+
+.state-desktop .desktop-case,
+.state-mobile .mobile-case {
+    transform: scale(1.12);
+}
