@@ -3,61 +3,48 @@
     padding: 80px 20px 180px;
     min-height: 100vh;
     background: radial-gradient(circle at 50% -20%, #1a1535 0%, #050507 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    perspective: 1000px;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden; perspective: 1000px;
 }
 
 .hero-grid {
-    position: absolute;
-    inset: 0;
-    background-image:
-        linear-gradient(to right, rgba(124,92,255,.08) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(124,92,255,.08) 1px, transparent 1px);
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background-image: 
+        linear-gradient(to right, rgba(124, 92, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(124, 92, 255, 0.08) 1px, transparent 1px);
     background-size: 50px 50px;
-    transform: rotateX(60deg) scale(3);
-    transform-origin: top;
-    animation: gridMove 20s linear infinite;
+    transform: rotateX(60deg) scale(3); transform-origin: top;
+    animation: gridMove 20s linear infinite; z-index: 1;
 }
 
 .hero-glow {
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at center, rgba(124,92,255,.15) 0%, transparent 70%);
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 100%; height: 100%;
+    background: radial-gradient(circle at center, rgba(124, 92, 255, 0.15) 0%, transparent 70%);
+    z-index: 2;
 }
 
-.project-hero .container {
-    position: relative;
-    z-index: 10;
-    text-align: center;
-    max-width: 1200px;
+.project-hero .container { position: relative; z-index: 10; text-align: center; max-width: 1200px; }
+
+.hero-content-wrapper { animation: fadeInUp 1s ease-out; }
+
+.main-project-logo { 
+    width: 550px; max-width: 95vw; height: auto; 
+    filter: brightness(0) invert(1) drop-shadow(0 0 45px rgba(124, 92, 255, 0.5)); 
 }
 
-.main-project-logo {
-    width: 550px;
-    max-width: 95vw;
-    filter: brightness(0) invert(1) drop-shadow(0 0 45px rgba(124,92,255,.5));
+.hero-subtitle { max-width: 650px; margin: 40px auto; font-size: 1.15rem; color: rgba(255, 255, 255, 0.6); line-height: 1.7; }
+
+.hero-stats {
+    display: flex; justify-content: center; gap: 40px;
+    margin-top: 60px; padding-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.project-badgey {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 8px 24px;
-    border-radius: 100px;
-    background: rgba(124,92,255,0.1);
-    border: 1px solid rgba(124,92,255,0.4);
-    font-size: .75rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
+.stat-item { display: flex; flex-direction: column; gap: 5px; }
+.stat-item strong { color: #fff; font-size: 1.2rem; }
+.stat-item span { color: rgba(255, 255, 255, 0.4); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; }
 
-.pulse-dot {
-    width: 6px;
-    height: 6px;
-    background: #7c5cff;
-    border-radius: 50%;
-    animation: pulse 2s infinite;
-}
+/* Animações Auxiliares */
+@keyframes gridMove { 0% { background-position: 0 0; } 100% { background-position: 0 50px; } }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }

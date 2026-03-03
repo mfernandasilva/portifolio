@@ -1,76 +1,48 @@
 .project-showcase {
-    max-width: 1500px;
-    margin: 120px auto;
-    padding: 80px 40px;
-    text-align: center;
-    background: radial-gradient(circle at top, #111117, #0c0c11);
-    border-radius: 28px;
+    max-width: 1850px; margin: 140px auto; padding: 100px 60px;
+    text-align: center; background: radial-gradient(circle at top, #111117, #0c0c11);
+    border-radius: 32px;
 }
 
-.showcase-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 40px;
-}
+.showcase-title { font-size: 2.8rem; font-weight: 700; margin-bottom: 40px; color: #fff; }
+.showcase-title span { color: #7c5cff; }
 
-.showcase-title span {
-    color: #7c5cff;
-}
-
+/* Botões de Troca */
 .control-btns {
-    display: inline-flex;
-    background: rgba(255,255,255,.05);
-    padding: 6px;
-    border-radius: 14px;
-    gap: 6px;
-    border: 1px solid rgba(255,255,255,.08);
+    display: inline-flex; background: rgba(255,255,255,0.05);
+    padding: 8px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.08); gap: 8px;
 }
 
 .view-btn {
-    border: none;
-    background: transparent;
-    color: #888;
-    padding: 10px 24px;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: .3s;
+    background: transparent; border: none; color: #888;
+    padding: 12px 28px; border-radius: 14px; font-weight: 600; cursor: pointer;
+    transition: all 0.25s ease;
 }
 
 .view-btn.active {
-    background: #7c5cff;
-    color: #fff;
+    background: #7c5cff; color: white; box-shadow: 0 8px 22px rgba(124,92,255,0.4);
 }
 
+/* Container de Preview */
 .showcase-container {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 120px;
-    min-height: 950px;
+    position: relative; display: flex; justify-content: center; align-items: center;
+    margin-top: 100px; min-height: 950px;
 }
 
-.desktop-case {
-    max-width: 1250px;
-    width: 100%;
-    transition: .5s ease;
+.device-frame {
+    width: 1440px; height: 760px; background: #000; border-radius: 28px;
+    overflow: hidden; position: relative;
+    box-shadow: 0 60px 160px rgba(0,0,0,0.9), 0 0 0 2px rgba(255,255,255,0.04);
 }
 
-.mobile-case {
-    width: 470px;
-    height: 920px;
-    transition: .5s ease;
+.iphone-frame {
+    width: 430px; height: 900px; background: #000; border-radius: 60px;
+    border: 16px solid #111; overflow: hidden;
+    box-shadow: 0 60px 140px rgba(0,0,0,0.9);
 }
 
-.state-desktop .mobile-case,
-.state-mobile .desktop-case {
-    opacity: 0;
-    pointer-events: none;
-    transform: scale(.8);
-    position: absolute;
-}
+.device-screen iframe { width: 100%; height: 100%; border: none; }
 
-.state-desktop .desktop-case,
-.state-mobile .mobile-case {
-    transform: scale(1.12);
-}
+/* Lógica de visibilidade */
+.state-desktop .mobile-case { opacity: 0; pointer-events: none; position: absolute; }
+.state-mobile .desktop-case { opacity: 0; pointer-events: none; position: absolute; }
