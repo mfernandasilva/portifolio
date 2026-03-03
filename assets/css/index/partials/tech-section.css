@@ -4,6 +4,20 @@
   background-color: var(--bg-primary); 
 }
 
+.tech-badge-tech {
+  display: inline-block;
+  padding: 6px 16px;
+  background: rgba(124, 92, 255, 0.1);
+  border: 1px solid rgba(124, 92, 255, 0.3);
+  border-radius: 100px;
+  color: #7c5cff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
 .tech-intro {
   max-width: 760px;
   margin: 0 auto 88px;
@@ -14,7 +28,7 @@
 .tech-intro h2 {
   font-size: clamp(2.2rem, 5vw, 3.6rem);
   margin-bottom: 16px;
-  background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.5) 100%);
+  background: linear-gradient(135deg, #ffffff, var(--purple-secondary));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salão de Beleza</title>
+    <link rel="stylesheet" href="../assets/css/index/index.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <nav class="navbar-container">
+            <div class="navbar-logo">
+                <img src="../assets/files/logo-maria.png" alt="Logo">
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#stack">Stack</a></li>
+            </ul>
+
+            <div class="navbar-actions">
+                <a href="#" class="btn-whatsapp whatsapp-link">
+                    <img src="../assets/files/whatsapp.png" alt="WhatsApp">
+                    <span class="btn-text">Contrate agora</span>
+                </a>
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+<section class="project-hero">
+    <div class="hero-grid"></div>
+    <div class="hero-glow"></div>
+    
+    <div class="floating-shape shape-1"></div>
+    <div class="floating-shape shape-2"></div>
+
+    <div class="container">
+        <div class="hero-content-wrapper">
+            <span class="project-badgey">
+                <span class="pulse-dot"></span> Sistema CineList
+            </span>
+            <div class="project-logo-wrapper">
+                <img src="../assets/files/projetos/CineList-logo.png" alt="Logo do CineList" class="main-project-logo">
+            </div>
+            <p class="hero-subtitle">
+                Gerencie <strong>filmes e séries</strong> com eficiência e praticidade. 
+                Dashboard intuitivo, operações CRUD completas e autenticação de usuários.
+            </p>
+            
+            <div class="hero-actions">
+                <a href="#" target="_blank" class="project-btn-live">
+                    Explorar Repositório <span class="arrow">→</span>
+                </a>
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat-item"><strong>Java & JavaFX</strong><span>Interface desktop</span></div>
+                <div class="stat-item"><strong>MongoDB</strong><span>Banco de dados NoSQL</span></div>
+                <div class="stat-item"><strong>CRUD Completo</strong><span>Filmes, Séries e Usuários</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+ <section class="project-info">
+    <div class="container-info">
+        <div class="info-story">
+            <div class="section-label">O Projeto</div>
+
+            <h2 class="info-title">
+                Gerenciando <span class="highlight">filmes e séries</span> de forma eficiente.
+            </h2>
+
+            <div class="info-grid-content">
+
+                <div class="info-block">
+                    <h3>O Desafio</h3>
+                    <p>
+                        Criar um sistema que permitisse o <strong>controle completo</strong> de filmes, séries e usuários, incluindo cadastro, edição, exclusão e autenticação, de forma intuitiva e funcional.
+                    </p>
+                </div>
+
+                <div class="info-block">
+                    <h3>A Solução</h3>
+                    <p>
+                        Desenvolvi uma aplicação desktop completa, utilizando Java e JavaFX para a interface, e MongoDB para persistência de dados, com dashboard personalizado e operações CRUD totalmente implementadas.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="info-tech-card">
+            <div class="glass-card">
+
+                <div class="glass-header">
+                    <span class="pulse-dot"></span>
+                    <h3>Tech Stack & Features</h3>
+                </div>
+
+                <ul class="features-list">
+                    <li>
+                        <span class="icon">✦</span>
+                        <div>
+                            <strong>Java & JavaFX</strong>
+                            <p>Interface desktop intuitiva e responsiva.</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <span class="icon">✦</span>
+                        <div>
+                            <strong>MongoDB</strong>
+                            <p>Banco de dados NoSQL para gerenciamento eficiente de registros.</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <span class="icon">✦</span>
+                        <div>
+                            <strong>CRUD Completo</strong>
+                            <p>Operações completas de criação, leitura, atualização e exclusão de filmes, séries e usuários.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+    
+<section class="project-showcase">
+    <div class="showcase-header">
+        <h3 class="showcase-title">
+            Experiência Live <span>Full Preview</span>
+        </h3>
+
+        <div class="view-controls">
+            <div class="control-btns">
+                <button class="view-btn active"
+                        onclick="changeView('desktop', this)"
+                        aria-pressed="true">
+                    Desktop
+                </button>
+
+                <button class="view-btn"
+                        onclick="changeView('mobile', this)"
+                        aria-pressed="false">
+                    Mobile
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="showcase-container state-desktop" id="preview-container">
+        <!-- DESKTOP -->
+        <div class="device-wrapper desktop-case">
+            <div class="device-frame">
+                <div class="device-screen">
+                    <iframe src="https://cida-cabeleireira.vercel.app/"
+                            title="Preview Desktop">
+                    </iframe>
+                </div>
+            </div>
+            <div class="device-stand"></div>
+        </div>
+
+        <!-- MOBILE -->
+        <div class="device-wrapper mobile-case">
+            <div class="iphone-frame">
+                <div class="device-screen">
+                    <iframe src="https://cida-cabeleireira.vercel.app/"
+                            title="Preview Mobile">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section class="cta-section">
+        <div class="cta-container">
+            <div class="cta-orb orb-1"></div>
+            <div class="cta-orb orb-2"></div>
+
+            <div class="cta-content">
+            <span class="cta-badge">Disponível para novos desafios</span>
+            <h2>Pronto para elevar o nível do seu projeto?</h2>
+            <p>
+                Seja para escalar um produto como <strong>CLT</strong> ou tirar uma ideia do papel como <strong>Freelancer</strong>, 
+                estou pronta para aplicar arquiteturas sólidas e código de alta performance.
+            </p>
+
+            <div class="cta-actions">
+                <a href="#" target="_blank" class="cta-btn-primary whatsapp-link">
+                <span>Entrar em contato</span>
+                </a>
+
+                <a href="../docs/CURRICULO-MARIAFERNANDA.pdf" class="cta-btn-secondary">
+                Baixar meu currículo
+                </a>
+            </div>
+
+            <div class="cta-trust">
+                <span>✔ Soluções Personalizadas</span>
+                <span>✔ Arquitetura Escalável</span>
+                <span>✔ Foco na experiência do usuário</span>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+            <img src="../assets/files/logo-maria.png" alt="Maria Fernanda Logo" class="footer-logo">
+            <p class="footer-about">
+                Sou motivada por desafios que unem criatividade e tecnologia. Desenvolvedora focada em criar soluções escaláveis, 
+                organizadas e com alto impacto visual e técnico.
+            </p>
+            <a href="mailto:fernandasalomao2002@gmail.com" class="footer-email">
+                fernandasalomao2002@gmail.com
+            </a>
+            </div>
+
+            <div class="footer-center">
+            <h4>Links Úteis</h4>
+            <ul>
+                <li><a href="#about">Baixar Currículo</a></li>
+                <li><a href="#projects">Projetos</a></li>
+                <li><a href="#stack">Tecnologias</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+            </div>
+
+            <div class="footer-right">
+            <h4>Minhas Redes</h4>
+            <div class="social-grid">
+                <a href="#" target="_blank" class="social-btn whatsapp-link"> <img src="../assets/files/whatsapp.png" alt="WhatsApp"> </a>
+                <a href="https://github.com/mfernandasilva" class="social-btn" target="_blank"><img src="../assets/files/redes/github.png" alt="GitHub"></a>
+                <a href="https://www.linkedin.com/in/maria-fernanda-a390b7228/" class="social-btn" target="_blank"><img src="../assets/files/redes/linkedin.png" alt="LinkedIn"></a>
+                <a href="mailto:fernandasalomao2002@gmail.com" class="social-btn"><img src="../assets/files/redes/email.png" alt="Email"></a>
+                <a href="#" class="social-btn" target="_blank"><img src="../assets/files/redes/gitlab.png" alt="GitLab"></a>
+            </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>© Maria Fernanda — Todos os direitos reservados</span>
+        </div>
+    </footer>
+
+<script>
+function changeView(view, button) {
+    const container = document.getElementById('preview-container');
+
+    container.classList.remove('state-desktop', 'state-mobile');
+    container.classList.add('state-' + view);
+
+    document.querySelectorAll('.view-btn').forEach(btn => {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-pressed', 'false');
+    });
+
+    button.classList.add('active');
+    button.setAttribute('aria-pressed', 'true');
+}
+</script>
+</body>
+</html>
